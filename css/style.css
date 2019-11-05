@@ -1,0 +1,224 @@
+/* VERIF */
+/* [class*="container"] {
+  border: 1px solid coral;
+}
+
+[class*="row"] {
+  border: 1px solid red;
+}
+
+[class*="col-"] {
+  border: 1px solid blue;
+} */
+
+/** -------------- GENERAL -------------- **/
+
+* {
+    font-family: 'Muli', Arial, sans-serif;
+    font-size:1rem;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    border-bottom: 2px dotted goldenrod;
+    font-weight: bold;
+}
+
+.padding {
+    height: 65vh;
+    box-shadow: inset 0px -20px 10px -10px rgba(0, 0, 0, 0.50), 
+inset 0px 20px 10px -10px rgba(0, 0, 0, 0.50);
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+body > section {
+    /* height: 85vh; */
+    padding:1rem;
+    align-items: center;
+}
+
+.card {
+    background-color:#fff8;
+    box-shadow: 1px 0px 10px #0003;
+    border-radius: 12px;
+    margin:1rem;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+table * {
+    padding:0.7rem;
+    text-align: center;
+    empty-cells: hide;
+}
+
+th {
+    background-color:#6c1111;
+    color:white;
+}
+
+td {
+    background-color:#f0cb96;
+}
+
+.emptyCell {
+    background-color:initial;
+}
+
+/** -------------- Navbar -------------- **/
+
+.navbar {
+    background-color: #6c1111;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.nav-item {
+    color:#fff;
+    text-decoration: none;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color:red;
+    text-shadow: 0 0 1px black, 0 0 12px white, 0 0 4px white;
+}
+
+/** -------------- Section 1 ACCUEIL -------------- **/
+#welcome {
+    color: rgba(255, 255, 255, 0.8);
+    background-image: url(../img/red-seats.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    height:85vh;
+}
+
+#welcome .slogan {
+    text-shadow: 1px 1px 4px #ea5d5d;
+    font-family: 'Cinzel', serif;
+    border:none;
+}
+
+/** -------------- Section 2 FILMS A L'AFFICHE -------------- **/
+
+#billboard {
+    background-color: #fbe6c7;
+}
+
+.card-img-top {
+    max-width:240px;
+    padding:1rem;
+}
+
+.reserv {
+    max-width:250px;
+    width:50%;
+}
+
+#reservModal .modal-content{
+    background-color:#fffd;
+}
+
+.modal-header {
+    background-color: #fff;
+    box-shadow: 0 0 15px #0004;
+}
+
+#tableReserv td {
+    background-color:#fbe6c7;
+}
+/** -------------- Section 3 INFOS PRATIQUES -------------- **/
+
+#infosPadding {
+    background-image: linear-gradient(0deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/red-curtain3.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+#infos {
+    background-color: #fbe6c7;
+    min-height:55vh;
+}
+
+#avantages, #tarifs {
+    padding-top:2rem;
+}
+
+/** -------------- Section 4 MAP & ADRESSE -------------- **/
+
+#localisation {
+    background-color:#fff3e1;
+    height:65vh;
+}
+
+#localisationContent {
+    padding-top:2rem;
+}
+
+#map {
+    width:66%;
+    height:66%;
+    max-width:600px;
+    max-height:450px;
+    min-height:300px;
+    min-width:400px;
+}
+
+/** -------------- Section 5 FORMULAIRE CONTACT -------------- **/
+
+#contactPadding {
+    background-image:url(../img/abstract.jpg);
+}
+
+#contact {
+    background-color: #fbe6c7;
+    height:75vh;
+}
+
+.form-control, #contact input, #contact textarea, #tableReserv select {
+    margin:0.3rem;
+    padding:0.5rem;
+    background-color:#fff7; /* #f0cb96; */
+    border-radius: 8px;
+    border:2px solid #f0cb96;
+}
+
+#contact input:focus, #contact textarea:focus, #formSubmit:focus, #tableReserv select:focus {
+    box-shadow: 0 0 0 .2rem #ff000040;
+}
+#contact #formSubmit {
+    background-color:#f0cb96;
+    color:black;
+}
+#contact #formSubmit:hover {
+    background-color:#6c1111;
+    color:white;
+}
+
+/** --------------- Footer ---------------- **/
+
+footer {
+    background-color: #6c1111;
+    color:#fff9;
+}
+
+#newsletter, #socialNetworks {
+    padding-top: 1rem;
+}
+
+#socialNetworks img {
+    width:50px;
+}
+
+#legal {
+    background-color: #211103;
+}

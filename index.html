@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css" class="css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Muli&display=swap" rel="stylesheet">
+
+    <title>🎞Blackbox Cinema🎞</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">BlackBox Cinema</a>
+            <button class="navbar-toggler" type="button" data-toggle="col-smlapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="col-smlapse navbar-col-smlapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#billboard">Films à l'affiche</a>
+                    <a class="nav-item nav-link" href="#infos">Infos Pratiques</a>
+                    <a class="nav-item nav-link" href="#localisation">Où nous trouver</a>
+                    <a class="nav-item nav-link" href="#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Accueil -->
+    <section id="welcome" class="d-flex container-fluid">
+        <div class="row align-items-center justify-content-center">
+            <figure class="figure">
+                <img class="img" src="img/logo/logo_blackbox.png" alt="Logo Blackbox Cinema" />
+            </figure>
+            <div class="col-sm-12">
+                <h1 class="slogan">🍿🍿Viendez chez nous, s'il vous plaît !!! Nous avons du popcorn.🍿🍿</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Films à l'affiche -->
+    <section id="billboard" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>Films à l'affiche</h1>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-4">
+                <div class="card">
+                    <img class="card-img-top align-self-center" src="img/films/terminator2.jpg"
+                        alt="Terminator 2: Judgement Day Poster">
+                    <div class="d-flex flex-column align-items-center card-body">
+                        <h5 class="card-title">Terminator 2: Judgement Day</h5>
+                        <p class="card-text">Directed by James Cameron. With Arnold Schwarzenegger, Linda Hamilton,
+                            Edward
+                            Furlong, Robert Patrick. A cyborg, identical to the one who failed to kill Sarah Connor,
+                            must
+                            now
+                            protect her teenage son, John Connor, from a more advanced and powerful cyborg.
+                        </p>
+                        <button type="button" class="btn btn-primary reserv" data-toggle="modal"
+                            data-target="#reservModal">
+                            Réserver des places...
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <img class="card-img-top align-self-center" src="img/films/promare.jpg"
+                        alt="Terminator 2: Judgement Day Poster">
+                    <div class="d-flex flex-column align-items-center card-body">
+                        <h5 class="card-title">Promare</h5>
+                        <p class="card-text">Directed by Hiroyuki Imaishi. With John Eric Bentley, Steve Blum, Johnny
+                            Yong Bosch,
+                            Melissa Fahn. A futuristic firefighting mecha service is created to protect the world.</p>
+                        </p>
+                        <button type="button" class="btn btn-primary reserv" data-toggle="modal"
+                            data-target="#reservModal">
+                            Réserver des places...
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <img class="card-img-top align-self-center" src="img/films/getout.jpg"
+                        alt="Terminator 2: Judgement Day Poster">
+                    <div class="d-flex flex-column align-items-center card-body">
+                        <h5 class="card-title">Get Out</h5>
+                        <p class="card-text">Directed by Jordan Peele. With Daniel Kaluuya, Allison Williams, Bradley
+                            Whitford,
+                            Catherine Keener. A young African-American visits his white girlfriend's parents for the
+                            weekend,
+                            where his simmering uneasiness about their reception of him eventually reaches a boiling
+                            point.
+                        </p>
+                        <button type="button" class="btn btn-primary reserv" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Réserver des places...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour réservations -->
+    <section id="reservModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="reservModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reservModalLabel">Fenêtre de réservation de places</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <table class="table" id="tableReserv">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tarif</th>
+                                    <th scope="col">Séance</th>
+                                    <th scope="col">Quantité</th>
+                                    <th scope="col">Prix Unitaire</th>
+                                    <th scope="col">Prix Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <select class="form-control" name="tarif" id="tarif">
+                                            <option value="enfant">-14 ans</option>
+                                            <option value="normal" selected>Plein pot</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" name="seance" id="seance">
+                                                <option value="semaine">Lundi au Vendredi de 9h à 18h</option>
+                                                <option value="semaine">Lundi au Vendredi en soirée</option>
+                                                <option value="weekend">Weekend</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="number" name="quantite" id="quantite" value="0" min="0" max="42">
+                                    </td>
+                                    <td>
+                                        <p id="prixUnit">--</p>
+                                    </td>
+                                    <td>
+                                        <p id="prixTotal">--</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ipsa, fuga pariatur animi
+                        voluptate sunt quaerat vero laudantium tenetur placeat iste magni dolor adipisci est ad vel
+                        deserunt? Corporis, praesentium.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Nouvelle réservation</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Effacer les réservations</button>
+                    <button type="button" class="btn btn-primary">Confirmer et PAYER</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infos pratiques -->
+    <div id="infosPadding" class="padding"></div>
+    <section id="infos" class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-sm">
+                <h1>Infos Pratiques</h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <section class="col-sm-5" id="avantages">
+                <h2>Avantages Cinéma</h2>
+                <ol>
+                    <li>Salle climatisée</li>
+                    <li>Toutes les salles en IMAX</li>
+                    <li>Son Digital Prologic Surround</li>
+                </ol>
+            </section>
+            <section class="col-sm-5" id="tarifs">
+                <h2>Tableau tarifs</h2>
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <td class="emptyCell"></td>
+                            <th colspan="2">Lundi au Vendredi</th>
+                            <th rowspan="2">Weekend</th>
+                        </tr>
+                        <tr>
+                            <td class="emptyCell"></td>
+                            <td>de 9h à 18h</td>
+                            <td>soirée</td>
+                        </tr>
+                        <tr>
+                            <th>-14 ans</th>
+                            <td>5&euro;</td>
+                            <td>6&euro;</td>
+                            <td>6&euro;</td>
+                        </tr>
+                        <tr>
+                            <th>Plein tarif</th>
+                            <td>10&euro;</td>
+                            <td>12&euro;</td>
+                            <td>12,5&euro;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </section>
+
+    <!-- Localisation -->
+    <section id="localisation" class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-sm">
+                <h1>Où nous trouver ?</h1>
+            </div>
+        </div>
+        <div id="localisationContent" class="row justify-content-md-center">
+            <div class="col-sm-5">
+                <address>
+                    <h2>Notre adresse :</h2>
+                    <p>245 Rue Tartempion 34000 Montpellier</p>
+                    <p>01.23.45.67.89</p>
+                </address>
+            </div>
+            <div class="col-sm-5">
+                <iframe id="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d303730.1933872434!2d-169.6506671931015!3d16.751498237093415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a1eb1c526a3005d%3A0x472f001a195af9d8!2sJohnston%20Island%20National%20Wildlife%20Refuge%2C%20%C3%8Eles%20mineures%20%C3%A9loign%C3%A9es%20des%20%C3%89tats-Unis!5e1!3m2!1sfr!2sfr!4v1572443424349!5m2!1sfr!2sfr"
+                    frameborder="0" style="border:0;" allowfullscreen="">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <div id="contactPadding" class="padding"></div>
+    <section id="contact" class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <h1>Nous contacter</h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <form class="col-sm-8" action="index.html" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" name="lastName" class="form-control" placeholder="Nom" />
+                        <input type="tel" name="tel" class="form-control" placeholder="Numéro de téléphone" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" name="firstName" class="form-control" placeholder="Prénom" />
+                        <input type="email" name="email" class="form-control" placeholder="Adresse mail" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <input type="text" name="topic" class="form-control" placeholder="Sujet du message" />
+                        <textarea name="msg" class="form-control" placeholder="Contenu de votre message..."></textarea>
+                    </div>
+                </div>
+                <input type="submit" value="Envoyer" id="formSubmit" class="btn btn-primary">
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <div id="social" class="row">
+            <div id="newsletter" class="col-sm">
+                <p>Inscrivez-vous à notre newsletter pour qu'on puisse vendre votre email à des entreprises tierces !
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dicta illo quibusdam obcaecati magni
+                    harum fuga, soluta quam porro vero veritatis corporis ut quidem, ipsa temporibus qui, sint numquam
+                    quasi?</p>
+            </div>
+            <div id="socialNetworks" class="col-sm">
+                <p>Suivez nous sur touitar et faissbouc pour vous faire brainwasher !</p>
+                <a href="https://www.facebook.com" target="_blank"><img src="img/social/f_logo_RGB-Hex-Blue_512.png"
+                        alt="Facebook Logo" /></a>
+                <a href="https://www.twitter.com" target="_blank"><img
+                        src="img/social/Twitter_Social_Icon_Rounded_Square_Color.png" alt="Twitter logo"></a>
+
+            </div>
+        </div>
+        <div id="legal" class="row">
+            <div class="d-flex justify-content-center col-sm">
+                <p>Mentions légales</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
