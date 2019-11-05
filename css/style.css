@@ -125,16 +125,27 @@ td {
 }
 
 #reservModal .modal-content{
-    background-color:#fffd;
+    background-color:#ffffffdd;
+    /* backdrop-filter: blur(2px); */
 }
 
 .modal-header {
     background-color: #fff;
     box-shadow: 0 0 15px #0004;
 }
+#tableReservBody {
+    padding:0;
+}
+#tableReserv {
+    box-shadow: 0 2px 12px #0004;
+}
 
 #tableReserv td {
     background-color:#fbe6c7;
+}
+
+.toast-header {
+    color:black;
 }
 /** -------------- Section 3 INFOS PRATIQUES -------------- **/
 
@@ -186,7 +197,7 @@ td {
 
 .form-control, #contact input, #contact textarea, #tableReserv select {
     margin:0.3rem;
-    padding:0.5rem;
+    /* padding:0.5rem; */
     background-color:#fff7; /* #f0cb96; */
     border-radius: 8px;
     border:2px solid #f0cb96;

@@ -104,7 +104,7 @@
                             point.
                         </p>
                         <button type="button" class="btn btn-primary reserv" data-toggle="modal"
-                            data-target="#exampleModal">
+                            data-target="#reservModal">
                             Réserver des places...
                         </button>
                     </div>
@@ -126,7 +126,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <table class="table" id="tableReserv">
+                        <table class="table table-borderless">
                             <thead>
                                 <tr>
                                     <th scope="col">Tarif</th>
@@ -136,47 +136,60 @@
                                     <th scope="col">Prix Total</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
+                            <tbody id="tableReservBody">
+                                <tr class="rowReserv">
                                     <td>
-                                        <select class="form-control" name="tarif" id="tarif">
+                                        <select class="form-control" name="tarif" onchange="updatePrix()">
                                             <option value="enfant">-14 ans</option>
                                             <option value="normal" selected>Plein pot</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <select class="form-control" name="seance" id="seance">
-                                                <option value="semaine">Lundi au Vendredi de 9h à 18h</option>
-                                                <option value="semaine">Lundi au Vendredi en soirée</option>
-                                                <option value="weekend">Weekend</option>
+                                        <select class="form-control" name="seance" onchange="updatePrix()">
+                                            <option value="semaineJournee" selected>Lundi au Vendredi de 9h à 18h
+                                            </option>
+                                            <option value="semaineSoiree">Lundi au Vendredi en soirée</option>
+                                            <option value="weekend">Weekend</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="number" name="quantite" id="quantite" value="0" min="0" max="42">
+                                        <input class="form-control" type="number" name="quantite" onchange="updatePrix()"
+                                            value="0" min="0" max="42">
                                     </td>
                                     <td>
-                                        <p id="prixUnit">--</p>
+                                        <p class="prixUnit">--</p>
                                     </td>
-                                    <td>
-                                        <p id="prixTotal">--</p>
+                                    <td class='total'>
+                                        <p class="prixTotal">--</p>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ipsa, fuga pariatur animi
-                        voluptate sunt quaerat vero laudantium tenetur placeat iste magni dolor adipisci est ad vel
-                        deserunt? Corporis, praesentium.
+                        <div id="recap">
+                            <strong>Total à payer : <span id="grandTotal">--</span>€</strong>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Nouvelle réservation</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">Effacer les réservations</button>
-                    <button type="button" class="btn btn-primary">Confirmer et PAYER</button>
+                    <button type="button" class="btn btn-success" id="btnNew">Nouvelle réservation</button>
+                    <button type="button" class="btn btn-warning" id="btnEffacer">Effacer les réservations</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnPayer">Confirmer et PAYER</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Popup de confirmation de paiement -->
+    <div class="toast fade" data-autohide="false" style="z-index: 10000; position: fixed; right: 0; bottom: 0;">
+        <div class="toast-header bg-danger">
+            <strong class="mr-auto">Avertissement de débit</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body">
+            Votre carte bleue a bien été débitée de <span id="montant">0</span>€.
+        </div>
+    </div>
 
     <!-- Infos pratiques -->
     <div id="infosPadding" class="padding"></div>
@@ -288,9 +301,7 @@
             <div id="newsletter" class="col-sm">
                 <p>Inscrivez-vous à notre newsletter pour qu'on puisse vendre votre email à des entreprises tierces !
                 </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dicta illo quibusdam obcaecati magni
-                    harum fuga, soluta quam porro vero veritatis corporis ut quidem, ipsa temporibus qui, sint numquam
-                    quasi?</p>
+                <button type="button" class="btn btn-outline-info">Souscrire</button>
             </div>
             <div id="socialNetworks" class="col-sm">
                 <p>Suivez nous sur touitar et faissbouc pour vous faire brainwasher !</p>
@@ -307,6 +318,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Calcul du prix pour les réservations. -->
+    <script src="js/gestionResa.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
